@@ -80,4 +80,11 @@ public final class SeleniumWrapper {
         actions.build().perform();
     }
 
+    public static void dragAndDropElement(By by, WebElement target) {
+        Actions actions = new Actions(driver);
+        scrollToElement(by);
+        actions.dragAndDrop((WebElement) by, target);
+        actions.build().perform();
+    }
+
 }
