@@ -26,10 +26,10 @@ public class MenuBar {
         hoverOverElement(menDropMenu);
     }
     public String getBreadcrumbsPath() {
-        return getText(breadcrumbs);
+        return getElementText(breadcrumbs);
     }
     public void clickMenShirtsDropOption() {
-        click(menShirtsDropOption);
+        clickElement(menShirtsDropOption);
     }
 
 

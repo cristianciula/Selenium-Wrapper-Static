@@ -29,20 +29,20 @@ public class LoginPage {
         return SeleniumWrapper.getCurrentUrl();
     }
     public void enterEmail(String string) {
-        sendKeys(emailInputField, string);
+        sendKeysToElement(emailInputField, string);
     }
     public void enterPassword(String string) {
-        sendKeys(passwordInputField, string);
+        sendKeysToElement(passwordInputField, string);
     }
     public void clickLoginButton() {
         scrollToElement(loginButton);
-        click(loginButton);
+        clickElement(loginButton);
     }
     public void clearPasswordInput() {
-        clear(passwordInputField);
+        clearElement(passwordInputField);
     }
     public void clearEmailField() {
-        clear(emailInputField);
+        clearElement(emailInputField);
     }
     public void clearCredentialsInputs() {
         clearEmailField();
@@ -52,7 +52,7 @@ public class LoginPage {
         return isElementDisplayed(loginButton);
     }
     public String getEmailEmptyErrorMessage() {
-        return getText(emailEmptyErrorMessage);
+        return getElementText(emailEmptyErrorMessage);
     }
     public boolean isEmailFieldDisplayed() {
         return isElementDisplayed(emailInputField);

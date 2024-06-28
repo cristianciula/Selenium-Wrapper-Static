@@ -3,6 +3,8 @@ package wrappers;
 import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
 
+import java.util.List;
+
 public final class SeleniumWrapper {
 
     private static WebDriver driver;
@@ -12,11 +14,17 @@ public final class SeleniumWrapper {
 
     //____________________PRIVATE METHODS____________________//
 
-    private static WebElement findElement(By by) {
+
+
+    //____________________PUBLIC METHODS____________________//
+    public static WebElement findElement(By by) {
         return driver.findElement(by);
     }
 
-    //____________________PUBLIC METHODS____________________//
+    public static List<WebElement> findElements(By by) {
+        return driver.findElements(by);
+    }
+
     public static void scrollToElement(By by) {
         JavascriptExecutor js = (JavascriptExecutor) driver;
         js.executeScript("arguments[0].scrollIntoView();", findElement(by));
@@ -26,12 +34,12 @@ public final class SeleniumWrapper {
         driver.get(url);
     }
 
-    public static void click(By by) {
+    public static void clickElement(By by) {
         scrollToElement(by);
         driver.findElement(by).click();
     }
 
-    public static void clear(By by) {
+    public static void clearElement(By by) {
         scrollToElement(by);
         driver.findElement(by).clear();
     }
@@ -40,7 +48,7 @@ public final class SeleniumWrapper {
         return driver.getCurrentUrl();
     }
 
-    public static String getText(By by) {
+    public static String getElementText(By by) {
         scrollToElement(by);
         return driver.findElement(by).getText();
     }
@@ -60,7 +68,7 @@ public final class SeleniumWrapper {
         return driver.findElement(by).isEnabled();
     }
 
-    public static void sendKeys(By by, String string) {
+    public static void sendKeysToElement(By by, String string) {
         scrollToElement(by);
         driver.findElement(by).sendKeys(string);
     }

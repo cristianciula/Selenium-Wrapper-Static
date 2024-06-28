@@ -41,13 +41,13 @@ public class Header {
         navigateToUrl(URL.HOME_PAGE);
     }
     public void selectMyAccountDropdownOption() {
-        click(myAccountDropdownOption);
+        clickElement(myAccountDropdownOption);
     }
     public void clickCartButton() {
-        click(cartButton);
+        clickElement(cartButton);
     }
     public void selectLoginDropdownOption() {
-        click(loginDropdownOption);
+        clickElement(loginDropdownOption);
     }
     public boolean isLogOutButtonDisplayed() {
         waitsWrapper.waitElementToBeVisible(logoutDropdownOption, 2);
@@ -58,14 +58,14 @@ public class Header {
         return isElementDisplayed(loginDropdownOption);
     }
     public void clickAccountDropdownButton() {
-        click(accountDropdownButton);
+        clickElement(accountDropdownButton);
     }
     public void selectLogoutDropdownOption() {
-        click(logoutDropdownOption);
+        clickElement(logoutDropdownOption);
         waitsWrapper.waitUrlToBe("https://ecommerce.tealiumdemo.com/", 7);
     }
     public void selectRegisterDropdownOption() {
-        click(registerDropdownOption);
+        clickElement(registerDropdownOption);
         waitsWrapper.waitUrlToBe("https://ecommerce.tealiumdemo.com/customer/account/create/", 2);
     }
     public void logoutUser() {
@@ -79,18 +79,18 @@ public class Header {
     }
     public String getWelcomeMessage() {
         waitsWrapper.waitElementToBeVisible(welcomeMessage, 2);
-        return getText(welcomeMessage);
+        return getElementText(welcomeMessage);
     }
     public void clickLanguageSelect() {
-        click(languageSelect);
+        clickElement(languageSelect);
     }
     public void selectEnglishLanguageOption() {
-        click(englishLanguageOption);
+        clickElement(englishLanguageOption);
     }
     public void selectFrenchLanguageOption() {
-        click(frenchLanguageOption);
+        clickElement(frenchLanguageOption);
     }
     public void selectGermanLanguageOption() {
-        click(germanLanguageOption);
+        clickElement(germanLanguageOption);
     }
 }
