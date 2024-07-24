@@ -86,5 +86,7 @@ public final class SeleniumWrapper {
         actions.dragAndDrop((WebElement) by, (WebElement) target);
         actions.build().perform();
     }
+    //TODO: Create custom waiter method to wait for a specific exact "string" if the value of that webelement is updated later than the element itself is displayed. Can potentially also add wait time as well.
+    // Method can contain following parameters: (expectedText, waitTimeInSeconds)
 
 }
