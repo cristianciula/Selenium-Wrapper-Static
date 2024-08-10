@@ -14,9 +14,11 @@ public class LoginTests extends BaseTest {
         driver.get(URL.LOGIN_PAGE);
     }
 
-    @Test(description = "User can login by entering a valid Email and a valid Password.",
+    @Test(description = "User can login using valid credentials.",
             dataProvider = "validLoginCredentials", dataProviderClass = DataProviders.class)
     public void canLoginWithValidCredentials(String email, String password) {
+        loginPage.clearCredentialsInputs();
+
         loginPage.enterEmail(email);
         loginPage.enterPassword(password);
         loginPage.clickLoginButton();

@@ -29,7 +29,11 @@ public class BaseTest {
     public void beforeTest() {
         WebDriverManager.chromedriver().setup();
         ChromeOptions options = new ChromeOptions();
-        options.addArguments("--start-maximized");
+
+        options.addArguments(
+                "--start-maximized " +
+                "--disable-search-engine-choice-screen"
+        );
 
         driver = new ChromeDriver(options);
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(2));

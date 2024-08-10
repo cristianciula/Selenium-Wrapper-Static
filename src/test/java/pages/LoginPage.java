@@ -40,7 +40,5 @@ public class LoginPage {
         clearEmailField();
         clearPasswordInput();
     }
-    public boolean isLoginButtonDisplayed() {
-        return isElementDisplayed(loginButton);
-    }
+
 }

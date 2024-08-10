@@ -18,6 +18,6 @@ public class AccountDashboardPage {
 
     //____________________METHODS____________________//
     public String getContactInfoEmail() {
-        return getElementText(driver, contactInfoEmail);
+        return getElementText(contactInfoEmail);
     }
 }
