@@ -24,7 +24,6 @@ public class LoginTests extends BaseTest {
         loginPage.clickLoginButton();
 
         assertTrue(accountDashboardPage.getContactInfoEmail().contains(email));
-
     }
 
 }
