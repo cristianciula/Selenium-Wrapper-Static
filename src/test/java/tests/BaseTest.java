@@ -17,15 +17,7 @@ public class BaseTest {
     public static LoginPage loginPage;
     public static AccountDashboardPage accountDashboardPage;
 
-    @BeforeClass
-    public static void setUp() {
-    }
-
-    @AfterClass
-    public static void tearDown() {
-    }
-
-    @BeforeTest
+    @BeforeMethod
     public void beforeTest() {
         WebDriverManager.chromedriver().setup();
         ChromeOptions options = new ChromeOptions();
@@ -44,8 +36,14 @@ public class BaseTest {
         SeleniumHelper.setDriver(driver);
     }
 
-    @AfterTest
-    public void afterTest() {
-        driver.quit();
+    @AfterMethod
+    public void tearDown() {
+        if (driver != null) {
+            driver.quit();
+            driver = null;
+        }
+
+        loginPage = null;
+        accountDashboardPage = null;
     }
 }
