@@ -17,7 +17,6 @@ public class LoginPage {
     private final By emailInputField = By.id("email");
     private final By passwordInputField = By.id("pass");
     private final By loginButton = By.xpath("//button[@title=\"Login\"]");
-    private final By emailEmptyErrorMessage = By.id("advice-required-entry-email");
 
     //____________________METHODS____________________//
     public void enterEmail(String string) {
