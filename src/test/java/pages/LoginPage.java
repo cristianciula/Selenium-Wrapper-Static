@@ -2,9 +2,8 @@ package pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import wrappers.SeleniumWrapper;
 
-import static wrappers.SeleniumWrapper.*;
+import static helpers.SeleniumHelper.*;
 
 public class LoginPage {
 
@@ -20,14 +19,7 @@ public class LoginPage {
     private final By loginButton = By.xpath("//button[@title=\"Login\"]");
     private final By emailEmptyErrorMessage = By.id("advice-required-entry-email");
 
-    //____________________PRIVATE METHODS____________________//
-
-
-
-    //____________________PUBLIC METHODS____________________//
-    public String getCurrentUrl() {
-        return SeleniumWrapper.getCurrentUrl();
-    }
+    //____________________METHODS____________________//
     public void enterEmail(String string) {
         sendKeysToElement(emailInputField, string);
     }
@@ -50,14 +42,5 @@ public class LoginPage {
     }
     public boolean isLoginButtonDisplayed() {
         return isElementDisplayed(loginButton);
-    }
-    public String getEmailEmptyErrorMessage() {
-        return getElementText(emailEmptyErrorMessage);
-    }
-    public boolean isEmailFieldDisplayed() {
-        return isElementDisplayed(emailInputField);
-    }
-    public boolean isPasswordFieldDisplayed() {
-        return isElementDisplayed(passwordInputField);
     }
 }
