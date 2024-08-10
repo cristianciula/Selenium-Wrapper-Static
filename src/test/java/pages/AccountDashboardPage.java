@@ -3,7 +3,7 @@ package pages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-import static helpers.SeleniumWrapper.*;
+import static wrappers.SeleniumWrapper.*;
 
 public class AccountDashboardPage {
 
@@ -16,7 +16,9 @@ public class AccountDashboardPage {
     //____________________LOCATORS____________________//
     private final By contactInfoEmail = By.xpath("//div[@class=\"dashboard\"]/descendant::p[contains(.,\"testuser@example.com\")]");
 
-    //____________________METHODS____________________//
+    //____________________PRIVATE METHODS____________________//
+
+    //____________________PUBLIC METHODS____________________//
     public String getContactInfoEmail() {
         return getElementText(contactInfoEmail);
     }

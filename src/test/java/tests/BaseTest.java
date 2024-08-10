@@ -6,7 +6,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.annotations.*;
 import pages.*;
-import helpers.SeleniumWrapper;
+import wrappers.SeleniumWrapper;
 
 import java.time.Duration;
 
@@ -16,7 +16,7 @@ public class BaseTest {
     public static LoginPage loginPage;
     public static AccountDashboardPage accountDashboardPage;
 
-    @BeforeClass
+    @BeforeMethod
     public void setUp() {
 
         WebDriverManager.chromedriver().setup();
@@ -36,7 +36,7 @@ public class BaseTest {
 
     }
 
-    @AfterClass
+    @AfterMethod
     public void tearDown() {
 
         if (driver != null) {

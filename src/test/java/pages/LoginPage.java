@@ -1,10 +1,9 @@
 package pages;
 
-import helpers.SeleniumWrapper;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-import static helpers.SeleniumWrapper.*;
+import static wrappers.SeleniumWrapper.*;
 
 public class LoginPage {
 
