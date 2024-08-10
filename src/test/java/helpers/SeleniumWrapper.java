@@ -4,16 +4,26 @@ import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
 
 import java.util.List;
+import java.util.UUID;
 
-public final class SeleniumHelper {
+public final class SeleniumWrapper {
 
     private static WebDriver driver;
+    private static String instanceId;
 
     public static void setDriver(WebDriver driver) {
-        SeleniumHelper.driver = driver;
+        //System.out.println("New instance of SeleniumHelper created");
+        instanceId = UUID.randomUUID().toString();
+        System.out.println("SeleniumHelper instance created with ID: " + instanceId);
+        SeleniumWrapper.driver = driver;
     }
 
-    //------------------------------------------------------------------------------------//
+    //____________________METHODS____________________//
+
+    public static String getInstanceId() {
+        return instanceId;
+    }
+
 
     public static WebElement findElement(By locator) {
         return driver.findElement(locator);

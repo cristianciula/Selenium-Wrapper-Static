@@ -3,7 +3,7 @@ package pages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-import static helpers.SeleniumHelper.*;
+import static helpers.SeleniumWrapper.*;
 
 public class AccountDashboardPage {
 

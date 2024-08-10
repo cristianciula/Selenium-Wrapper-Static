@@ -1,5 +1,6 @@
 package tests;
 
+import helpers.SeleniumWrapper;
 import testdata.DataProviders;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
@@ -15,8 +16,10 @@ public class LoginTests extends BaseTest {
     }
 
     @Test(description = "User can login using valid credentials.",
-            dataProvider = "validLoginCredentials", dataProviderClass = DataProviders.class)
+            dataProvider = "validLoginCredentials", dataProviderClass = DataProviders.class,
+            invocationCount = 5)
     public void canLoginWithValidCredentials(String email, String password) {
+        System.out.println(SeleniumWrapper.getInstanceId());
         loginPage.clearCredentialFields();
 
         loginPage.enterEmail(email);
@@ -24,6 +27,8 @@ public class LoginTests extends BaseTest {
         loginPage.clickLoginButton();
 
         assertTrue(accountDashboardPage.getContactInfoEmail().contains(email));
+
+        System.out.println(SeleniumWrapper.getInstanceId());
     }
 
 }

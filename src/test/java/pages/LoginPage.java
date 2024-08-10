@@ -1,14 +1,16 @@
 package pages;
 
+import helpers.SeleniumWrapper;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-import static helpers.SeleniumHelper.*;
+import static helpers.SeleniumWrapper.*;
 
 public class LoginPage {
 
     WebDriver driver;
 
+    //____________________CONSTRUCTOR____________________//
     public LoginPage(WebDriver driver) {
         this.driver = driver;
     }
@@ -19,11 +21,12 @@ public class LoginPage {
     private final By loginButton = By.xpath("//button[@title=\"Login\"]");
 
     //____________________METHODS____________________//
-    public void enterEmail(String string) {
-        sendKeysToElement(emailInputField, string);
+    public void enterEmail(String email) {
+        sendKeysToElement(emailInputField, email);
     }
-    public void enterPassword(String string) {
-        sendKeysToElement(passwordInputField, string);
+    public void enterPassword(String password) {
+        clearPasswordField();
+        sendKeysToElement(passwordInputField, password);
     }
     public void clickLoginButton() {
         scrollToElement(loginButton);
