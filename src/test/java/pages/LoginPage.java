@@ -29,15 +29,15 @@ public class LoginPage {
         scrollToElement(loginButton);
         clickElement(loginButton);
     }
-    public void clearPasswordInput() {
+    public void clearPasswordField() {
         clearElement(passwordInputField);
     }
     public void clearEmailField() {
         clearElement(emailInputField);
     }
-    public void clearCredentialsInputs() {
+    public void clearCredentialFields() {
         clearEmailField();
-        clearPasswordInput();
+        clearPasswordField();
     }
 
 }
