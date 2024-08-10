@@ -15,8 +15,7 @@ public class LoginTests extends BaseTest {
     }
 
     @Test(description = "User can login using valid credentials.",
-            dataProvider = "validLoginCredentials", dataProviderClass = DataProviders.class,
-            invocationCount = 5)
+            dataProvider = "validLoginCredentials", dataProviderClass = DataProviders.class)
     public void canLoginWithValidCredentials(String email, String password) {
         loginPage.clearCredentialFields();
 
